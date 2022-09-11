@@ -1,10 +1,10 @@
 ﻿import "./byeie"; // loučíme se s IE
 
-/*
-// snadné načtení souboru pro každého!
-fetch("https://blabla.cz/blabla.json")
-  .then(response => response.json()) // nebo .text(), když to není json
-  .then(data => {
-    // tady jde provést s daty cokoliv
-  });
-*/
+window.addEventListener("message", function (a) {
+  if (void 0 !== a.data["cro-embed-height"])
+    for (var e in a.data["cro-embed-height"])
+      if ("cro-interaktivni-kandidatky" == e) {
+        var d = document.querySelector("#cro-interaktivni-kandidatky");
+        d && (d.style.height = a.data["cro-embed-height"][e] + "px");
+      }
+});
